@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana Speak</title>
-   
-    
+   <style>
+       textarea{
+           width: 80%;
+           height: 10vh;
+           display: block;
+           margin: 1rem;
+           padding: 1rem;
+       }
 
+       #output{
+           border: 1px solid black;
+           height: 10vh;
+           width: 80%;
+           margin: 1rem;
+           padding: 1rem;
+       }
+   </style>
 </head>
+
 <body>
     <h1>Talk bananaaa</h1>
+    <textarea id="txt-input" placeholder="put your sentence in english hee and we wil convert it to banana"></textarea>
+<button id="btn-translate"> Translate </button>
 
-    <script src="app.js" type="text/javascript"></script>
-    
-    <!-- // EX-03 wiring button cick -->
-    <button> Click </button>
+<div style="font-size: larger;">output will com here 👇</div>
+<div id="output"></div>
+<script src="app.js"></script>
 </body>
+
 </html>
