@@ -1,8 +1,8 @@
 
 
-var btnTranslate = document.querySelector("#btn-translate");
-var txtInput = document.querySelector("#txt-input");
-var outputDiv = document.querySelector("#output");
+var inputButton = document.querySelector("#btn-translate");
+var textInput = document.querySelector('textarea');
+var outputText = document.querySelector("#output-text");
 
 
 // var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
@@ -10,7 +10,7 @@ var outputDiv = document.querySelector("#output");
 var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
 
-function getTranslationURL(text){
+function urlText(text){
     return serverURL + "?" + "text=" + text
 }
 
@@ -39,7 +39,29 @@ function clickHandler() {
 
 
 
-btnTranslate.addEventListener("click", clickHandler);
+inputButton.addEventListener("click", function userClick() {
+    
+    if (textInput.value === '') {
+        alert('Please enter your sentence.');
+    } else if (!isNaN(parseFloat(textInput.value))) {
+        alert('Please Enter Text!');
+    } else if (/\d/.test(textInput.value)) {
+        alert('Please Enter only Text!text in english');
+    } else {
+        fetch(urlText(textInput.value)).then(response => response.json()).then(function getJsonLog(json) {
+            console.log(urlText(textInput.value));
+            console.log(json);
+            outputText.innerText = json.contents.translated;
+        }).catch(function errorHandling(error) {
+            if (error.code === 429) {
+                alert("Sorry! Currently we are overloaded with too many requests.Please try again in a while.");
+            } else {
+                console.log("Sorry an Error Occured", error);
+                alert("Something went wrong with our server! Try again after some time");
+            }
+        });
+    }
+});
 
 
 

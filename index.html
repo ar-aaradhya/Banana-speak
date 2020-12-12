@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Banana Speak</title>
-   <style>
-       textarea{
-           width: 80%;
-           height: 10vh;
-           display: block;
-           margin: 1rem;
-           padding: 1rem;
-       }
 
-       #output{
-           border: 1px solid black;
-           height: 10vh;
-           width: 80%;
-           margin: 1rem;
-           padding: 1rem;
-       }
-   </style>
 </head>
 
 <body>
-    <h1>Talk bananaaa</h1>
-    <textarea id="txt-input" placeholder="put your sentence in english hee and we wil convert it to banana"></textarea>
-<button id="btn-translate"> Translate </button>
+    <h1 id="heading">Talk bananaaa!</h1>
+    <section>
+    <textarea id="txt-input" cols="30" rows="10" placeholder="Enter the text you want to translate to Banana Language..... "></textarea>
+    <button id="btn-translate" class="btn"> Translate </button>
+    <textarea id="output-text" cols="30" rows="10"></textarea>
+    
+    </section>  
+   <script src="app.js"></script>
 
-<div style="font-size: larger;">output will com here 👇</div>
-<div id="output"></div>
-<script src="app.js"></script>
+   <footer>
+       Let's talk in minion language.
+       <br> This is the enlish to minion langugae translator.
+       
+   </footer>
 </body>
+
 
 </html>
